@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
   <title>DVNPRT | Analyst &amp; Coder</title>
   <meta name="description" content="Daryn Connar (DVNPRT) — Analyst &amp; Coder.">
   <meta property="og:title" content="DVNPRT | Analyst &amp; Coder">
@@ -27,7 +28,7 @@
       --bg: #f6f7f9;
       --fg: #111827;
       --muted: #5b6472;
-      --accent: #0d9488;
+      --accent: #0f766e;
       --border: #d5dae1;
       --card: #ffffff;
     }
@@ -78,7 +79,7 @@
 
     h1 {
       font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
-      font-size: clamp(4.5rem, min(30vw, 38vh), 22rem);
+      font-size: clamp(4.5rem, min(30vw, 38dvh), 22rem);
       font-weight: 800;
       letter-spacing: 0.01em;
       line-height: 1;
@@ -177,6 +178,64 @@
       filter: drop-shadow(0 0 8px var(--accent));
       outline: 2px solid var(--accent);
       outline-offset: 4px;
+    }
+
+    nav a:active {
+      color: var(--accent);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      h1 {
+        animation: fade-in 750ms ease-out both;
+      }
+
+      .fullname {
+        animation: rise-in 650ms ease-out 150ms both;
+      }
+
+      .subtitle {
+        animation: rise-in 650ms ease-out 250ms both;
+      }
+
+      .rule {
+        animation: expand-in 600ms ease-out 450ms both;
+      }
+
+      .bio {
+        animation: rise-in 650ms ease-out 550ms both;
+      }
+
+      nav {
+        animation: rise-in 600ms ease-out 800ms both;
+      }
+
+      nav:focus-within {
+        animation: none;
+      }
+
+      nav a:active {
+        transform: scale(0.96);
+      }
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+    }
+
+    @keyframes rise-in {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+    }
+
+    @keyframes expand-in {
+      from {
+        opacity: 0;
+        transform: scaleX(0);
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
